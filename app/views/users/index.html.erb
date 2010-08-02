@@ -1,4 +1,7 @@
 <h1>Listing users</h1>
+<% if @users.empty? %>
+	<p>No users found. Login to be the first one.</p>
+<% else %>
 <table>
     <tr>
         <th>
@@ -40,3 +43,4 @@
     </tr>
     <% end %>
 </table>
+<% end %>
