@@ -1,0 +1,15 @@
+This is a Rails app that demonstrates the basic usage of the rpx_now gem (http://github.com/grosser/rpx_now)
+which allows you to easily add Janrain Engage (formerly RPX) to your Rails app.
+
+Janrain Engage allows your visitors to sign-in to your site with their existing accounts on Facebook,
+Google, Twitter, Yahoo!, LinkedIn, Windows Live, MySpace, AOL or other networks and then gather their profile data 
+and publish their activities from your site to multiple social networks.
+
+Installation
+------------
+- Login to janrain.com and create a new application
+- Use the API Key of your new application for RPXNow.api_key in /config/environment.rb
+- Try the widget
+- In the "Sign-in" section of your Janrain dashboard, choose the providers you want to be included in the widget.
+A wizard will guide you if a provider needs some configuration.
+Note: a Facebook application needs "Connect URL" which looks like this: https://janrain-engage-demo.rpxnow.com/

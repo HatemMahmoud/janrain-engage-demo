@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <title>Janrain Engage Demo</title>
+        <%= stylesheet_link_tag 'scaffold' %>
+    </head>
+    <body>
+        <ul>
+            <li>
+                <%= link_to 'Home', root_path %>
+            </li>
+            <% if current_user %>
+            <li>
+                <%= link_to 'Profile', edit_user_path(current_user) %>
+            </li>
+            <li>
+                <%= link_to 'Logout', logout_path %>
+            </li>
+            <% else %>
+            <li>
+                <%= RPXNow.popup_code('Login','janrain-engage-demo', login_url) %>
+            </li>
+            <% end %>
+        </ul>
+        <%- flash.each do |name, message| -%>
+        <%= content_tag :div, message, :class => "#{name}" %>
+        <%- end -%>
+        <div>
+            <%= yield %>
+        </div>
+    </body>
+</html>

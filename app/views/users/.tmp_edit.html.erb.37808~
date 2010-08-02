@@ -1,0 +1,3 @@
+<h1>Edit profile</h1>
+<%= render :partial => 'form' %>
+<%= link_to 'Back', users_path %>
