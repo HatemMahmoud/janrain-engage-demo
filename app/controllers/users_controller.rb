@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :require_user, :only => [:edit, :update]
-  before_filter :require_valid_user, :except => [:index, :edit, :update]
+  before_filter :require_user, :except => [:index, :edit, :update]
+  before_filter :require_login, :only => [:edit, :update]
   
   def index
     @users = User.all

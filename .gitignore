@@ -1,2 +1,4 @@
 log/*.log
 tmp/**/*
+.tmp*
+.project

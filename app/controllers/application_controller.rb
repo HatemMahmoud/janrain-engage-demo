@@ -21,7 +21,8 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_id(session[:user_id])
   end
   
-  def require_user
+  # requires a current_user even if invalid
+  def require_login
     unless current_user
       store_location
       redirect_to login_path, :alert => "Please login to continue." 
@@ -29,12 +30,13 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  def require_valid_user
+  # requires a valid current_user
+  def require_user
     if current_user && !current_user.valid?
       store_location
       redirect_to edit_user_path(current_user), :alert => 'Please complete required data to continue.'
     else
-      require_user
+      require_login
     end
   end
   

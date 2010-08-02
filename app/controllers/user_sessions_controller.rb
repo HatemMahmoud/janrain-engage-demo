@@ -5,7 +5,7 @@ class UserSessionsController < ApplicationController
   end
   
   def create
-    if user_data = RPXNow.user_data(params[:token])
+    if params[:token] && user_data = RPXNow.user_data(params[:token])
       user_data = {:identifier => user_data[:identifier], :username => user_data[:username], :email => user_data[:email]}
       if self.current_user = User.find_by_identifier(user_data[:identifier])
         redirect_back_or_default root_path
