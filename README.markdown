@@ -18,11 +18,10 @@ profile data and publish their activities from your website to multiple social n
 
 ## Try it
 
-1. `git clone git@github.com:hatem/janrain-engage-demo.git`
+1. `git clone git://github.com/hatem/janrain-engage-demo.git`
 2. `cd janrain-engage-demo`
 3. Install required gems: `rake gems:install`
-4. Run the migration: `rake db:migrate` 
-5. Run the app and try the widget: `script/server`
+4. Run the app and try the widget: `script/server`
 
 ## Use it
 
