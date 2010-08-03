@@ -6,6 +6,8 @@ Janrain Engage allows your visitors to login to your website with their existing
 Google, Twitter, Yahoo!, LinkedIn, Windows Live, MySpace, AOL or other networks and then gather their
 profile data and publish their activities from your website to multiple social networks.
 
+![Janrain Engage Popup](/blob/master/public/images/janrain-engage-popup.png "Janrain Engage Popup")
+
 ## Features
 
 - A user can login using a popup or embedded widget
