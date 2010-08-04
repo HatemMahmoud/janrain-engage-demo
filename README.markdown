@@ -27,7 +27,7 @@ profile data and publish their activities from your website to multiple social n
 
 ## Use it
 
-1. Login to [Janrain](janrain.com) and create a new application
+1. Login to [Janrain](http://www.janrain.com) and create a new application
 2. Replace the value of `RPXNow.api_key` in `/config/environment.rb` with the API Key of your Janrain application
 3. Replace `janrain-engage-demo` in `RPXNow.popup_code()` and `RPXNow.embed_code()` with the name of your Janrain application 
 4. In the "Sign-in" section of your Janrain dashboard, you can choose the providers you want to be included in the widget. A wizard will guide you if a provider needs some configuration.
