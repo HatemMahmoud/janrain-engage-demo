@@ -13,9 +13,6 @@
         <th>
             Email
         </th>
-        <th>
-            Valid?
-        </th>
     </tr>
     <% @users.each do |user| %>
     <tr>
@@ -27,9 +24,6 @@
         </td>
         <td>
             <%=h user.email %>
-        </td>
-        <td>
-            <%= user.valid? %>
         </td>
         <td>
             <%= link_to 'Show', user %>
