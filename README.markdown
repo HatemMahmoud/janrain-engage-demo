@@ -11,12 +11,12 @@ profile data and publish their activities from your website to multiple social n
 ## Features
 
 - A user can login using a popup or embedded widget
+- User data is extracted and the user is auto-saved if valid
+- A user with invalid data is redirected to fix the auto-filled data  
 - `current_user` represents the currently logged in user 
 - You can use `before_filter :require_user` to protect restricted actions
-- A request to a restricted action redirects to a login page with embedded widget
-- Once logged in, a new user is redirected to edit profile data that is auto-filled
-- Once logged in, a returning user is redirected to the requested action
-- An invalid user (with duplicate username, missing email, etc.) can't access any restricted action before fixing her data
+- A user requesting a restricted action is redirected to a login page with embedded widget
+- Once logged in, a user is redirected to the requested action
 
 ## Try it
 
@@ -27,7 +27,7 @@ profile data and publish their activities from your website to multiple social n
 
 ## Use it
 
-1. Login to janrain.com and create a new application
+1. Login to [Janrain](janrain.com) and create a new application
 2. Replace the value of `RPXNow.api_key` in `/config/environment.rb` with the API Key of your Janrain application
 3. Replace `janrain-engage-demo` in `RPXNow.popup_code()` and `RPXNow.embed_code()` with the name of your Janrain application 
 4. In the "Sign-in" section of your Janrain dashboard, you can choose the providers you want to be included in the widget. A wizard will guide you if a provider needs some configuration.
