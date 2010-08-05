@@ -1,5 +1,10 @@
 class UserSessionsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:create]
+  skip_before_filter :require_user
+  
+  def set_title
+    @title = 'Login'
+  end
   
   # login
   def new

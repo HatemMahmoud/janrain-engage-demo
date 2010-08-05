@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  before_filter :require_user, :except => [:index, :new, :create]
+  skip_before_filter :require_user, :only => [:index, :new, :create]
+  
+  def set_title
+    @title = controller_name
+  end
   
   def index
     @users = User.all
@@ -10,12 +14,20 @@ class UsersController < ApplicationController
   end
   
   def new
-    @user = User.new session[:user_data]
-    session[:user_data] = nil
+    if session[:user_data].blank?
+      redirect_to root_path
+    else
+      @user = User.new session[:user_data]
+      session[:user_data] = nil
+    end
   end
   
   def edit
-    @user = User.find(params[:id])
+    if current_user.id == params[:id].to_i
+      @user = current_user
+    else
+      redirect_to root_path, :alert => 'Access denied!'
+    end
   end
   
   def create
