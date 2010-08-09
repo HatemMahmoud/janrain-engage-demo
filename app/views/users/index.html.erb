@@ -1,3 +1,4 @@
+<% @title = 'Users' %>
 <h2>Listing users</h2>
 <% if @users.empty? %>
 	<p>No users found! Login to be the first.</p>
@@ -20,19 +21,10 @@
             <%=h user.identifier %>
         </td>
         <td>
-            <%=h user.username %>
+            <%= link_to h(user.username), user %>
         </td>
         <td>
             <%=h user.email %>
-        </td>
-        <td>
-            <%= link_to 'Show', user %>
-        </td>
-        <td>
-            <%= link_to 'Edit', edit_user_path(user) %>
-        </td>
-        <td>
-            <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %>
         </td>
     </tr>
     <% end %>

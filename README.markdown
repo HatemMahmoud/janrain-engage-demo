@@ -10,12 +10,13 @@ profile data and publish their activities from your website to multiple social n
 
 ## Features
 
+- Supports Rails 2.3.8
 - A user can login using a popup or embedded widget
-- User data is extracted and the user is auto-saved if valid
+- User data (identifier, username, email) is extracted and the user is auto-saved if valid
 - A user with invalid data is redirected to fix the auto-filled data  
 - `current_user` represents the currently logged in user 
 - You can use `before_filter :require_user` to protect restricted actions
-- A user requesting a restricted action is redirected to a login page with embedded widget
+- A user requesting a restricted action is redirected to a login page with an embedded widget
 - Once logged in, a user is redirected to the requested action
 
 ## Try it

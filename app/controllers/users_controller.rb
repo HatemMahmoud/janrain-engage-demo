@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :require_user, :only => [:index, :new, :create]
-  
-  def set_title
-    @title = controller_name
-  end
+  skip_before_filter :require_user, :only => [:index, :show, :new, :create]
   
   def index
     @users = User.all
@@ -22,14 +18,6 @@ class UsersController < ApplicationController
     end
   end
   
-  def edit
-    if current_user.id == params[:id].to_i
-      @user = current_user
-    else
-      redirect_to root_path, :alert => 'Access denied!'
-    end
-  end
-  
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -39,6 +27,10 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+  
+  def edit
+    @user = current_user
   end
   
   def update

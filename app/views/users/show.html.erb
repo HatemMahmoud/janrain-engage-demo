@@ -1,4 +1,5 @@
-<h2>User profile [<%= link_to 'Edit', edit_user_path(@user) %>]</h2>
+<% @title = 'Profile' %>
+<h2>User profile</h2>
 <p>
     <b>Identifier:</b>
     <%=h @user.identifier %>

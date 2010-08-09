@@ -10,16 +10,13 @@
         <ul>
             <% if current_user %>
             <li>
-                Hi, <%= current_user.username %> [<%= link_to 'Profile', edit_user_path(current_user) %>, <%= link_to 'Logout', logout_path %>]
+                Hi, <%= link_to h(current_user.username), current_user %> [ <%= link_to 'Edit', edit_user_path(current_user) %> | <%= link_to 'Destroy', current_user, :confirm => 'Are you sure you want to delete your account?', :method => :delete %> | <%= link_to 'Logout', logout_path %> ]
             </li>
             <% else %>
             <li>
-                Login [<%= RPXNow.popup_code 'Popup', 'janrain-engage-demo', user_sessions_url %>, [<%= link_to 'Embedded', new_user_session_path %>]
+                Login [ <%= RPXNow.popup_code 'Popup', 'janrain-engage-demo', user_sessions_url %> | <%= link_to 'Embedded', new_user_session_path %> ]
             </li>
             <% end %>
-            <li>
-                <%= link_to 'Users', users_path %>
-            </li>
         </ul>
         <%- flash.each do |name, message| -%>
         <%= content_tag :div, message, :class => "#{name}" %>
